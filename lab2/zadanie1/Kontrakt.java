@@ -1,5 +1,5 @@
 import java.util.Random;
-
+import static java.lang.Math.*;
 
 public class Kontrakt implements Psikus {
 
@@ -28,9 +28,8 @@ public class Kontrakt implements Psikus {
 		}
 		else
 		{
-			int w;
-			do
-			{int r1 = r.nextInt(len)+1;
+			int wynik;
+			int r1 = r.nextInt(len)+1;
 			int wynik1=0;
 			int z1=liczba;
 			int n = 0;
@@ -54,13 +53,24 @@ public class Kontrakt implements Psikus {
 				z2=z2/10;
 				n++;
 			}
-			String wynik = Integer.toString(wynik1)+Integer.toString(wynik2);
-			w = Integer.parseInt(wynik);
-			
+			int tmp = r2-1;
+			while(tmp>0)
+			{
+				wynik1*=10;
+				tmp--;
+			}
+			tmp = r1-1;
+			while(tmp>0)
+			{
+				wynik2*=10;
+				tmp--;
+			}
+			//String wynik = Integer.toString(wynik1)+Integer.toString(wynik2);
+			//w = Integer.parseInt(wynik);
+			wynik = wynik1+wynik2;
 			
 				
-			}while(w==liczba);
-			return w;
+			return wynik;
 		}
 		return null;
 	}

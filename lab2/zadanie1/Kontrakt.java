@@ -53,7 +53,28 @@ public class Kontrakt implements Psikus {
 				z2=z2/10;
 				n++;
 			}
-			int tmp = r2-1;
+			int wynik3=0;
+			int rand1=r1;
+			int rand2=r2;
+			int w1=wynik1;
+			int w2=wynik2;
+			if(len>2){
+				int tmp1 = rand1-1;
+				while(tmp1>0)
+				{
+					w1*=10;
+					tmp1--;
+				}
+				tmp1 = rand2-1;
+				while(tmp1>0)
+				{
+					w2*=10;
+					tmp1--;
+				}
+				wynik3=liczba-(w1+w2);
+			}
+			
+		    int tmp = r2-1;
 			while(tmp>0)
 			{
 				wynik1*=10;
@@ -65,9 +86,10 @@ public class Kontrakt implements Psikus {
 				wynik2*=10;
 				tmp--;
 			}
+			
 			//String wynik = Integer.toString(wynik1)+Integer.toString(wynik2);
 			//w = Integer.parseInt(wynik);
-			wynik = wynik1+wynik2;
+			wynik = wynik1+wynik2+wynik3;
 			
 				
 			return wynik;

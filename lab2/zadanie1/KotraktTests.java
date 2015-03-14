@@ -18,24 +18,19 @@ public class KotraktTests {
 	public void cyfrokradTestIsThat() {
 		
 		int expected = kontrakt.cyfrokrad(37);
-		if(expected==3)
-		{
-		int wynik1 = 3;
-		assertThat(wynik1,is(expected));
-		}
-		else if(expected==7)
-		{
-		int wynik2 = 7;
-		assertThat(wynik2,is(expected));
-		}
-		else
-		{
-			fail("zly test!");
-		}
+		assertThat(expected,anyOf(is(30), is(7)));
+		System.out.println("liczba po zabraniu 1 cyfry:"+expected);
 	}
 	@Test
 	public void cyfrokradTestNull()
 	{
 		assertThat(kontrakt.cyfrokrad(4), is(nullValue()));
+	}
+	@Test
+public void cyfrokradTestIsThat3() {
+		
+		int expected = kontrakt.cyfrokrad(137);
+		assertThat(expected,anyOf(is(130), is(107), is(37)));
+		System.out.println("3 cyfrowa liczba z zabrana 1 cyfra:"+expected);
 	}
 }

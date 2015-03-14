@@ -13,39 +13,40 @@ public class hulajchochlaTest {
 		hulaj = new Kontrakt();
 	}
 	@Test
+	public void isNull() throws NieduanyPsikusException {
+		int expected = hulaj.hultajchochla(37);
+		assertThat(expected,is(notNullValue()));
+	}
+	@Test
 	public void hulajTest() throws NieduanyPsikusException {
 		int expected = hulaj.hultajchochla(37);
 		int wynik = 73;
-		assertThat(wynik,is(expected));
+		assertThat(expected,is(wynik));
+		System.out.println("test dla 2 cyfr:"+expected);
 	}
 	@Test
 	public void hulajTest3() throws NieduanyPsikusException {
 		int expected = hulaj.hultajchochla(123);
-		//123 132 213 231 312 321
-		if(expected==132){
-			int wynik = 132;
-		assertThat(wynik,is(expected));
-		}else
-			if(expected == 213)
-			{
-				int wynik = 213;
-				assertThat(wynik,is(expected));
-			}
-			else if(expected == 231)
-			{
-				int wynik = 231;
-				assertThat(wynik,is(expected));
-			} else if (expected == 312)
-			{
-				int wynik = 312;
-				assertThat(wynik,is(expected));
-			}
-			else if (expected == 321)
-			{
-				int wynik = 321;
-				assertThat(wynik,is(expected));
-			} else
-				fail("Nie trafiłeś");
+		//123=> 132 213 321 
+		assertThat(expected, anyOf(is(132), is(213), is(321)));
+		System.out.println("test dla 3 cyfr:"+expected);
 	}
-	
+	@Test
+	public void hulajTest4() throws NieduanyPsikusException {
+		int expected = hulaj.hultajchochla(1234);
+		//1234=> 1243 1432 4231 1324 3214 2134
+		assertThat(expected, anyOf(is(1243), is(1432), is(4231),is(1324), is(3214), is(2134)));
+		System.out.println("test dla 4 cyfr:"+expected);
+	}
+	@Test
+	public void nieudanyPsikus() throws NieduanyPsikusException {
+		boolean sprawdz = false;
+		try {
+			hulaj.hultajchochla(4);
+		} catch(NieduanyPsikusException e)
+		{
+			sprawdz = true;
+		}
+		assertTrue(sprawdz);
+	}
 }

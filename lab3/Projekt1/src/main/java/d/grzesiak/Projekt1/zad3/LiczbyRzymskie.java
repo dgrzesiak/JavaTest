@@ -1,12 +1,12 @@
 package d.grzesiak.Projekt1.zad3;
 
 public class LiczbyRzymskie {
-private Integer liczba;
+  private Integer liczba;
 public Integer getLiczba() {
-return liczba;
+  return liczba;
 }
 public void setLiczba(Integer liczba) {
-this.liczba = liczba;
+  this.liczba = liczba;
 }
 public String toString() {
 String rzymska = "";
@@ -15,13 +15,13 @@ String rzym[] = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "I
 int n=liczba;
 for(int i = 0; liczba > 0; i++)
 {
-n = liczba/liczby[i];
-if ((liczba > 0) && (liczba <= 3999)) {
-for (int j = 1; j <= n; j++) {
-rzymska = rzymska + rzym[i];
-}
-}
-liczba = liczba % liczby[i];
+  n = liczba/liczby[i];
+  if ((liczba > 0) && (liczba <= 3999)) {
+    for (int j = 1; j <= n; j++) {
+      rzymska = rzymska + rzym[i];
+    }
+  }
+  liczba = liczba % liczby[i];
 }
 return rzymska.toString();
 }

@@ -29,4 +29,12 @@ public void liczbaNotNull() {
 rzymska.setLiczba(27);
 assertNotNull(rzymska.toString());
 }
+@Test
+	public void LiczbaUjemna() {
+		
+		rzymska.setLiczba(-4);
+		//nie mialem pomyslu jak ma sie zachowac program gdy sie poda 
+		//liczbe ujemna to dalem by zwracalo null'a
+		assertNull(rzymska.toString());
+	}
 }

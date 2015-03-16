@@ -9,6 +9,11 @@ public void setLiczba(Integer liczba) {
   this.liczba = liczba;
 }
 public String toString() {
+  if (liczba<0)
+	{
+		return null;
+	}
+	else{
 String rzymska = "";
 int liczby[] = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
 String rzym[] = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
@@ -24,5 +29,6 @@ for(int i = 0; liczba > 0; i++)
   liczba = liczba % liczby[i];
 }
 return rzymska.toString();
+}
 }
 }

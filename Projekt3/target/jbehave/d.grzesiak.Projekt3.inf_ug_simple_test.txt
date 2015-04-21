@@ -1,0 +1,13 @@
+
+(d/grzesiak/Projekt3/inf_ug_simple_test.story)
+Scenario: open plan
+Given user is on home page
+When click plan link
+Then he open page with plan
+
+Scenario: open mrbs
+Given user is on home page
+When click mrbs link
+Then he open page with mrbs
+
+

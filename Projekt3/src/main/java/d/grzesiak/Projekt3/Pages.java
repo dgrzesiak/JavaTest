@@ -16,9 +16,6 @@ public class Pages {
 	private TI ti;
 	private NOSQL nosql;
 	private Ce ce;
-	private Mat mat;
-	private MFI mfi;
-	private Seminarium seminarium;
 	
 	
 	
@@ -58,24 +55,6 @@ public class Pages {
 			ce = new Ce(driverProvider);
 		}
 		return ce;
-	}
-	public Mat mat() {
-		if (mat == null) {
-			mat = new Mat(driverProvider);
-		}
-		return mat;
-	}
-	public MFI mfi() {
-		if (mfi == null) {
-			mfi = new MFI(driverProvider);
-		}
-		return mfi;
-	}
-	public Seminarium seminarium() {
-		if (seminarium == null) {
-			seminarium = new Seminarium(driverProvider);
-		}
-		return seminarium;
 	}
 	
 	
